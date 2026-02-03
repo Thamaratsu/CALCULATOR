@@ -4,12 +4,12 @@ int main() {
     int num;
     int result;
     char op;
-    char exit = 1;
+    int exit = 1;
 
-    while(1) {
+    while(exit == 1) {
         printf("Calculator : ");
         scanf("%d", &result);
-
+        
         while(1) {
             int c = getchar();
 
@@ -21,14 +21,36 @@ int main() {
 
             scanf("%d", &num);
 
+            if (op == '+'){
+                result += num;
+            } 
+            else if (op == '-') {
+                result -= num;
+            }
+             
+            else if (op == '*') {
+                result *= num;
+            } 
+            else if (op == '/') {
+                result /= num;
+            } 
+            else if (op == '%') {
+                result %= num;
+            }
+
         }
+    
+        printf("\n");
+        printf("result = %d\n", result);
 
         printf("Exit 0, don't Exit 1 :");
-            scanf("%c", &exit);
+            scanf("%d", &exit);
 
         if(exit == 0) {
-                break;
-            }
+            break;
+        } else {
+            exit = 1;
+        }
     }
-    
+
 }
