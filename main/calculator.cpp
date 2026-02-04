@@ -46,6 +46,8 @@ int main() {
         printf("Exit 0, don't Exit 1 :");
             scanf("%d", &exit);
 
+        printf("Hello");
+        
         if(exit == 0) {
             break;
         } else {
